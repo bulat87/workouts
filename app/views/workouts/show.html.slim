@@ -4,3 +4,9 @@ h1 Workout Show
   p = @workout.workout
   p = @workout.rating
   p = @workout.length
+
+= link_to "Back", root_path
+br
+= link_to "Edit", edit_workout_path(@workout)
+br
+= link_to "Destroy", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }
