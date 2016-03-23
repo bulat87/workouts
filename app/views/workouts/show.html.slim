@@ -5,6 +5,13 @@ h1 Workout Show
   p = @workout.rating
   p = @workout.length
 
+#exercises
+  h2 Exercises
+  = render @workout.exercises
+
+  h4 Add an exercises
+  = render "exercises/form"
+
 = link_to "Back", root_path
 br
 = link_to "Edit", edit_workout_path(@workout)
