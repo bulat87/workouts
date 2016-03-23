@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   resources :workouts do
   	resources :exercises
   end
-  root 'workouts#index'
+  root 'welcome#index'
 end
