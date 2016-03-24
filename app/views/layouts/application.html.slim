@@ -10,8 +10,14 @@ html
       .container
         .navbar-header
           = link_to "Workouts", root_path, class: "navbar-brand"
-        .nav.navbar-nav.navbar-right
-          = link_to "Create Workout", new_workout_path, class: "navbar navbar-link"
+        ul.nav.navbar-nav.navbar-right
+          li = link_to "Create Workout", new_workout_path
+          - if user_signed_in?
+            li = link_to "User page", edit_user_registration_path
+            li = link_to "Exit", destroy_user_session_path, :method => :delete
+          - else
+            li = link_to "Sign in", new_user_session_path
+            li = link_to "Sign up", new_user_registration_path
 
     .container
       - if notice
@@ -19,3 +25,8 @@ html
       - if alert
         p.alert = alert
       = yield
+
+    .navbar-fixed-bottom.navbar-inverse
+      .navbar-inner
+        .container.white
+          div Place sticky footer content here.
