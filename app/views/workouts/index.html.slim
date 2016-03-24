@@ -1,7 +1,14 @@
 h1 This is Workouts
 
-- @workouts.each do |workout|
-  h2 = link_to workout.workout, workout
-  p = workout.date.strftime("%A %B %m")
-  p = workout.rating
-  p = workout.length
+table.table.table-bordered
+  tr
+    td.col-md-3 Date
+    td.col-md-4 Lesson Name
+    td.col-md-2 Rating
+    td.col-md-3 Length
+  - @workouts.each do |workout|
+    tr
+      td = workout.date.strftime("%A %B %m")
+      td = link_to workout.workout, workout
+      td = workout.rating
+      td = workout.length
