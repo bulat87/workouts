@@ -38,11 +38,11 @@ class WorkoutsController < ApplicationController
 
   private
 
-  def workouts_params
-    params.require(:workout).permit(:date, :workout, :rating, :length)
-  end
+    def workouts_params
+      params.require(:workout).permit(:date, :workout, :rating, :length)
+    end
 
-  def find_workout
-    @workout = Workout.find(params[:id])
-  end
+    def find_workout
+      @workout = Workout.find(params[:id])
+    end
 end
