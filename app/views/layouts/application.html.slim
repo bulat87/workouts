@@ -9,7 +9,7 @@ html
     nav.navbar.navbar-inverse
       .container
         .navbar-header
-          = link_to "Workouts", root_path, class: "navbar-brand"
+          = link_to '<i class="glyphicon glyphicon-blackboard"></i>'.html_safe + " My lessons", root_path, class: "navbar-brand"
         ul.nav.navbar-nav.navbar-right
           li = link_to "Create Workout", new_workout_path
           - if user_signed_in?

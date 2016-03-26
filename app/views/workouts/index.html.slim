@@ -1,19 +1,19 @@
-h1 This is Workouts
+h1 Lessons List
 
-table.table.table-bordered
-  tr
-    td.col-md-2 Date
-    td.col-md-4 Lesson Name
-    td.col-md-2 Rating
-    td.col-md-2 Length
-    td.col-md-2 Actions
-  - @workouts.each do |workout|
+.panel.panel-default
+  table.table
     tr
-      td = workout.date.strftime("%A %B %m")
-      td = link_to workout.workout, workout
-      td = workout.rating
-      td = workout.length
-      td
-        = link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_workout_path(workout)
-        
-        = link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, workout, method: :delete, data: { confirm: "Are you sure?" }
+      td.col-md-2 Date
+      td.col-md-4 Lesson Name
+      td.col-md-1 Rating
+      td.col-md-1 Length
+      td.col-md-1 Actions
+    - @workouts.each do |workout|
+      tr
+        td = workout.date.strftime("%A %B %m")
+        td = link_to workout.workout, workout
+        td = workout.rating
+        td = workout.length
+        td
+          = link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_workout_path(workout)
+          = link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, workout, method: :delete, data: { confirm: "Are you sure?" }

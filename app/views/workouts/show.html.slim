@@ -1,9 +1,17 @@
-h1 Workout Show
+h1 = @workout.workout
 .workout
-  p = @workout.date
-  p = @workout.workout
-  p = @workout.rating
-  p = @workout.length
+  b Date: 
+  = @workout.date.strftime("%A %B %m")
+  br
+  b Rating: 
+  = @workout.rating
+  br
+  b Length: 
+  = @workout.length
+.btn-group
+  = link_to "Back", root_path, class: "btn btn-default" 
+  = link_to "Edit", edit_workout_path(@workout), class: "btn btn-warning" 
+  = link_to "Destroy", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" 
 
 #exercises
   h2 Exercises
@@ -11,9 +19,3 @@ h1 Workout Show
 
   h4 Add an exercises
   = render "exercises/form"
-
-= link_to "Back", root_path
-br
-= link_to "Edit", edit_workout_path(@workout)
-br
-= link_to "Destroy", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }
