@@ -1,4 +1,7 @@
-h3 = exercise.name
-p = exercise.workout_type
-p = exercise.link
-p = exercise.description
+- @workout.exercises.each do |exercise|
+  h3 = exercise.name
+  p = exercise.workout_type
+  p = link_to exercise.link, exercise.link
+  p = exercise.description
+  br
+  = link_to "Destroy exercise", workout_exercise_path(@workout, exercise), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

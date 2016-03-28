@@ -1,4 +1,4 @@
-= simple_form_for([@workout, @workout.exercises.build]) do |f|
+= simple_form_for [@workout, @workout.exercises.build] do |f|
   = f.input :name, input_html: { class: "from-control" }
   = f.input :workout_type, collection: ["ScreenCast", "Online Course", "Post Link"], input_html: { class: "from-control" }
   = f.input :link, input_html: { class: "from-control" }
