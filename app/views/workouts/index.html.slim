@@ -3,11 +3,16 @@ h1 Lessons List
 .panel.panel-default
   table.table
     tr
-      td.col-md-2 Date
-      td.col-md-4 Lesson Name
-      td.col-md-1 Rating
-      td.col-md-1 Length
-      td.col-md-1 Actions
+      td.col-md-2
+        b Date
+      td.col-md-4
+        b Lesson Name
+      td.col-md-1
+        b Rating
+      td.col-md-1
+        b Length
+      td.col-md-1
+        b Actions
     - @workouts.each do |workout|
       tr
         td = workout.date.strftime("%A %B %m")

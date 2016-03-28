@@ -11,20 +11,26 @@ html
         .navbar-header
           = link_to '<i class="glyphicon glyphicon-blackboard"></i>'.html_safe + " My lessons", root_path, class: "navbar-brand"
         ul.nav.navbar-nav.navbar-right
-          li = link_to "Create Workout", new_workout_path
           - if user_signed_in?
-            li = link_to "User page", edit_user_registration_path
-            li = link_to "Exit", destroy_user_session_path, :method => :delete
+            li = link_to '<i class="glyphicon glyphicon-plus-sign"></i>'.html_safe + " Create Workout", new_workout_path
+            li = link_to '<i class="glyphicon glyphicon-user"></i>'.html_safe + " User page", edit_user_registration_path
+            li = link_to '<i class="glyphicon glyphicon-log-out"></i>'.html_safe + " Exit", destroy_user_session_path, :method => :delete
           - else
-            li = link_to "Sign in", new_user_session_path
-            li = link_to "Sign up", new_user_registration_path
+            li = link_to '<i class="glyphicon glyphicon-log-in"></i>'.html_safe + " Sign in", new_user_session_path
+            li = link_to '<i class="glyphicon glyphicon-plus-sign"></i>'.html_safe + " Sign up", new_user_registration_path
 
     .container
       - if notice
         p.notice = notice
       - if alert
         p.alert = alert
-      = yield
+      .col-md-8
+        = yield
+      .col-md-4
+        .panel.panel-primary
+          .panel-heading Right panel
+          .panel-body Panel body
+
 
     .navbar-fixed-bottom.navbar-inverse
       .navbar-inner

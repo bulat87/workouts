@@ -1,13 +1,15 @@
 h1 = @workout.workout
 .workout
-  b Date: 
-  = @workout.date.strftime("%A %B %m")
-  br
-  b Rating: 
-  = @workout.rating
-  br
-  b Length: 
-  = @workout.length
+  ul
+    li
+      b Date: 
+      = @workout.date.strftime("%A %B %m")
+    li
+      b Rating: 
+      = @workout.rating
+    li
+      b Length: 
+      = @workout.length
 .btn-group
   = link_to "Back", root_path, class: "btn btn-default" 
   = link_to "Edit", edit_workout_path(@workout), class: "btn btn-warning" 
