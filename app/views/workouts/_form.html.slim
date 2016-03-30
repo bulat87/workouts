@@ -1,8 +1,8 @@
-= simple_form_for(@workout, html: { class: 'form-horizontal' }) do |f|
-  = f.input :date, label: "Date"
-  = f.input :workout, label: "Workout", class: " form-control"
-  = f.input :rating, label: "Rating", class: " form-control"
-  = f.input :length, label: "Length", class: " form-control"
-  br
-  = f.button :submit, class: "btn btn-primary btn-lg btn-block"
+.well.bs-component
+  = simple_form_for(@workout, html: { class: 'bs-component' }) do |f|
+    = f.input :date, label: "Date"
+    = f.input :workout, label: "Workout", class: " form-control"
+    = f.input :rating, label: "Rating", class: " form-control"
+    = f.input :length, label: "Length", class: " form-control"
+    = f.button :submit
   
