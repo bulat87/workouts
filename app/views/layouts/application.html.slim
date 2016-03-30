@@ -6,18 +6,18 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    nav.navbar.navbar-inverse
+    nav.navbar
       .container
         .navbar-header
-          = link_to '<i class="glyphicon glyphicon-blackboard"></i>'.html_safe + " My lessons", root_path, class: "navbar-brand"
+          = link_to icon_link("glyphicon glyphicon-blackboard", "My lessons"), root_path, class: "navbar-brand"
         ul.nav.navbar-nav.navbar-right
           - if user_signed_in?
-            li = link_to '<i class="glyphicon glyphicon-plus-sign"></i>'.html_safe + " Create Workout", new_workout_path
-            li = link_to '<i class="glyphicon glyphicon-user"></i>'.html_safe + " User page", edit_user_registration_path
-            li = link_to '<i class="glyphicon glyphicon-log-out"></i>'.html_safe + " Exit", destroy_user_session_path, :method => :delete
+            li = link_to icon_link("glyphicon glyphicon-plus-sign", "Create Workout"), new_workout_path
+            li = link_to icon_link("glyphicon glyphicon-user", "User page"), edit_user_registration_path
+            li = link_to icon_link("glyphicon glyphicon-log-out", "Exit"), destroy_user_session_path, :method => :delete
           - else
-            li = link_to '<i class="glyphicon glyphicon-log-in"></i>'.html_safe + " Sign in", new_user_session_path
-            li = link_to '<i class="glyphicon glyphicon-plus-sign"></i>'.html_safe + " Sign up", new_user_registration_path
+            li = link_to icon_link("glyphicon glyphicon-log-in", "Sign in"), new_user_session_path
+            li = link_to icon_link("glyphicon glyphicon-plus-sign", "Sign up"), new_user_registration_path
 
     .container
       - if notice

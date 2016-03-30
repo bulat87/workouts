@@ -1,7 +1,23 @@
-- @workout.exercises.each do |exercise|
-  h3 = exercise.name
-  p = exercise.workout_type
-  p = link_to exercise.link, exercise.link
-  p = exercise.description
-  br
-  = link_to "Destroy exercise", workout_exercise_path(@workout, exercise), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
+.panel.panel-default
+  .panel-heading Lessons
+  table.table
+    tr
+      td.col-md-2
+        b Lesson
+      td.col-md-2
+        b Lesson type
+      td.col-md-3
+        b Link to lesson
+      td.col-md-6
+        b Lesson description
+      td.col-md-1
+        b Delete
+    - @workout.exercises.each do |exercise|
+      tr.active
+        td 
+          b = exercise.name
+        td = exercise.workout_type
+        td = link_to exercise.link, exercise.link
+        td = exercise.description
+        td = link_to workout_exercise_path(@workout, exercise), method: :delete, class: "btn btn-danger"
+          span.glyphicon.glyphicon-erase

@@ -15,9 +15,7 @@ h1 = @workout.workout
   = link_to "Edit", edit_workout_path(@workout), class: "btn btn-warning" 
   = link_to "Destroy", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" 
 
-#exercises
-  h2 Exercises
+p#exercises
   = render "exercises/exercise"
 
-  h4 Add an exercises
   = render "exercises/form"

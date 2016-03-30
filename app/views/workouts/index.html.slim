@@ -2,10 +2,10 @@ h1 Lessons List
 
 .panel.panel-default
   table.table
-    tr
-      td.col-md-2
+    tr.info
+      td.col-md-3
         b Date
-      td.col-md-4
+      td.col-md-6
         b Lesson Name
       td.col-md-1
         b Rating
@@ -20,5 +20,7 @@ h1 Lessons List
         td = workout.rating
         td = workout.length
         td
-          = link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_workout_path(workout)
-          = link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, workout, method: :delete, data: { confirm: "Are you sure?" }
+          = link_to edit_workout_path(workout)
+            span.glyphicon.glyphicon-pencil
+          = link_to workout, method: :delete, data: { confirm: "Are you sure?" }
+            span.glyphicon.glyphicon-remove

@@ -1,7 +1,7 @@
 = simple_form_for [@workout, @workout.exercises.build] do |f|
-  = f.input :name, input_html: { class: "from-control" }
-  = f.input :workout_type, collection: ["ScreenCast", "Online Course", "Post Link"], input_html: { class: "from-control" }
-  = f.input :link, input_html: { class: "from-control" }
-  = f.input :description, as: :text, input_html: { class: "from-control" }
+  = f.input :name, class: "from-control"
+  = f.input :workout_type, collection: ["ScreenCast", "Online Course", "Post Link"], class: "from-control"
+  = f.input :link, class: "from-control"
+  = f.input :description, as: :text, class: "from-control"
   br
   = f.button :submit
