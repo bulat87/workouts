@@ -6,7 +6,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    nav.navbar
+    nav.navbar.navbar-default
       .container
         .navbar-header
           = link_to icon_link("glyphicon glyphicon-blackboard", "My lessons"), root_path, class: "navbar-brand"
@@ -18,7 +18,6 @@ html
           - else
             li = link_to icon_link("glyphicon glyphicon-log-in", "Sign in"), new_user_session_path
             li = link_to icon_link("glyphicon glyphicon-plus-sign", "Sign up"), new_user_registration_path
-
     .container
       - if notice
         p.notice = notice

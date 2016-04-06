@@ -5,11 +5,11 @@ h1 Lessons List
     tr
       td.col-md-3
         b Date
-      td.col-md-6
+      td.col-md-5
         b Lesson Name
       td.col-md-1
         b Rating
-      td.col-md-1
+      td.col-md-2
         b Length
       td.col-md-1
         b Actions
@@ -20,7 +20,7 @@ h1 Lessons List
         td = workout.rating
         td = workout.length
         td
-          = link_to edit_workout_path(workout), class: "btn btn-primary btn-xs"
+          = link_to edit_workout_path(workout), class: "btn btn-success btn-xs"
             span.glyphicon.glyphicon-pencil
-          = link_to workout, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-xs"
+          = link_to workout, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs"
             span.glyphicon.glyphicon-remove

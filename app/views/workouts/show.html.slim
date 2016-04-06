@@ -12,7 +12,7 @@ h1 = @workout.workout
       = @workout.length
 .btn-group
   = link_to "Back", root_path, class: "btn btn-default" 
-  = link_to "Edit", edit_workout_path(@workout), class: "btn btn-warning" 
+  = link_to "Edit", edit_workout_path(@workout), class: "btn btn-success" 
   = link_to "Destroy", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" 
 
 p#exercises
