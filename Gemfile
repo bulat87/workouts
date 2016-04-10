@@ -14,9 +14,10 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'russian'
 gem 'colorize'
+gem 'omniauth', '~> 1.3', '>= 1.3.1'
+gem 'pg'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug'
 end
 
@@ -25,8 +26,4 @@ group :development do
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
-end
-
-group :production do
-  gem 'pg'
 end
