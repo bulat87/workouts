@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
+
+#API
+  namespace :api do
+    resources :workouts
+  end
+
 end

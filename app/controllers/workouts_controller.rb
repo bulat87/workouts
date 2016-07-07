@@ -1,5 +1,7 @@
 class WorkoutsController < ApplicationController
   before_action :find_workout, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+
   def index
     @workouts = Workout.where(user_id: current_user)
   end
